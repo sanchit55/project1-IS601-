@@ -3,10 +3,10 @@
 class formlayout extends sheet
 {
  
- public function get()  /* To create a form */
+ public function get()  //To create a form 
  {
  	$view = '<form method="post" enctype="multipart/form-data"><hr><br>';
- 	$view.= '<input type="file" name="filesToUpload" id="filesToUpload"><br>';
+ 	$view.= '<input type="file" name="filesToUpload" id="filesToUpload"><br><br>';
  	$view.= '<input type="submit" value="Upload File" name="submit">';
  	$view.= '</form>';
     
@@ -14,12 +14,13 @@ class formlayout extends sheet
  	$this->html.= $view;
  }
 
-public function post() /* To Upload a form */
+public function post() //To Upload a form 
  {
 	$target_dir="uploads/";
-	$target_file=$target_dir.basename($_FILES["filesToUpload"]["name"]);
+	$target_file=$target_dir.basename($_FILES["filesToUpload"]["name"]); 
 
-	move_uploaded_file($_FILES["filesToUpload"]["tmp_name"],$target_file);
+	move_uploaded_file($_FILES["filesToUpload"]["tmp_name"],$target_file); 
+	// moves an uploaded file to a new location
 	header('Location:index.php?sheet=table&filename='.$target_file);
  }
 }
