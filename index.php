@@ -1,5 +1,4 @@
 <?php
-ini_set('display_errors','On');
 
 class Assembly{
 	public static function autoload($class)
@@ -14,24 +13,24 @@ class main{
 	public function __construct()
 	{
 		$pageCall='formlayout';
-		if(isset($_REQUEST['page']))
+		if(isset($_REQUEST['sheet']))
 		{
-			$pageCall = $_REQUEST['page'];
+			$pageCall = $_REQUEST['sheet'];
 		}
 
-		$page = new $pageCall;
+		$sheet = new $pageCall;
 		if($_SERVER['REQUEST_METHOD'] == 'GET')
 		{
-			$page->get();
+			$sheet->get();
 		}
 		else
 		{
-			$page->post();
+			$sheet->post();
 		}
 	}
 }
 
-abstract class page{
+abstract class sheet{
 	protected $html;
 
 	public function __construct()
@@ -46,12 +45,5 @@ abstract class page{
 		print($this->html);
 	}
 }
-
-
-
-
-
-
-
 
 ?>
