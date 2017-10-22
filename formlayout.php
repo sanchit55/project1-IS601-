@@ -10,7 +10,7 @@ class formlayout extends sheet
  	$view.= '<input type="submit" value="Upload File" name="submit">';
  	$view.= '</form>';
     
- 	$this->html.= '<h1><center>Uploading a File</center></h1>';
+ 	$this->html.= '<h1><center>Uploading a CSV File and converting into HTML table</center></h1>';
  	$this->html.= $view;
  }
 
