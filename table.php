@@ -2,7 +2,7 @@
 
 class table extends sheet{
 
-	public function get()
+	public static function get()
     {
     	$row=1;
     	if (($handle=fopen($_GET['filename'], "r")) !==false)
